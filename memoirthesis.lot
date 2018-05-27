@@ -1,16 +1,8 @@
 \select@language {english}
 \par \penalty \@M \textbf {{\scshape Table} \hfill Page}\par \penalty \@M 
 \addvspace {10pt}
-\contentsline {xchapter}{}{4}
-\contentsline {table}{\numberline {1.1}{\ignorespaces Comparison of virtualization tools based on different factors\relax }}{9}
+\contentsline {xchapter}{}{3}
+\contentsline {table}{\numberline {1.1}{\ignorespaces Comparison of virtualization tools based on different factors\relax }}{8}
 \addvspace {10pt}
 \contentsline {xchapter}{}{16}
-\addvspace {10pt}
-\contentsline {xchapter}{}{25}
-\contentsline {table}{\numberline {3.1}{\ignorespaces Dom0 processes organization\relax }}{27}
-\contentsline {table}{\numberline {3.2}{\ignorespaces \gls {dc} minimalistic architecture consumption\relax }}{28}
-\addvspace {10pt}
-\contentsline {xchapter}{}{33}
-\addvspace {10pt}
-\contentsline {xchapter}{}{40}
 \contentsfinish 

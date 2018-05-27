@@ -55,7 +55,7 @@
 \vspace{4mm}
 {\Large Presented and defended by } \\
 \vspace{4mm}
-{\large \textsc{\textbf{\textcolor{darkgray}{MVONDO DJOB Barbe Thystere}}}}\\
+{\large \textsc{\textbf{\textcolor{darkgray}{NOM Prenom}}}}\\
 \vspace{6mm}
 {\Large In partial fulfilment of the requirements for the award of a:} \\
 \vspace{4mm}
@@ -63,17 +63,17 @@
 \vspace{4mm}
 {\Large Under the supervision of:}\\
 \vspace{4mm}
-{\normalsize \textsc{\textbf{\textcolor{darkgray}{Daniel Hagimont, Professor, National Polytechnic Institute of Toulouse}}}}\\
+{\normalsize \textsc{\textbf{\textcolor{darkgray}{XXXX xxxx, Professor, National Polytechnic Institute of Toulouse}}}}\\
 \vspace{4.5mm}
-{\normalsize \textsc{\textbf{\textcolor{darkgray}{Alain Tchana, Associate Professor, National Polytechnic Institute of Toulouse}}}}\\
+{\normalsize \textsc{\textbf{\textcolor{darkgray}{XXXX xxxx, Associate Professor, National Polytechnic Institute of Toulouse}}}}\\
 \vspace{4.5mm}
-{\normalsize \textsc{\textbf{\textcolor{darkgray}{Boris Teabe, Engineer, \acrlong{irit}}}}} \\
+{\normalsize \textsc{\textbf{\textcolor{darkgray}{XXXX xxxx, Engineer, \acrlong{irit}}}}} \\
 \vspace{4.5mm}
 {\Large In front of the jury composed of:} \\
 \vspace{4.5mm}
 \begin{tabular}{>{\centering\arraybackslash}p{16cm}}
-{\Large President:} \textbf{{\large \textsc{Beno\^{i}t NDZANA, Associate Professor, University of Yaounde I}}} \\ \\
-{\Large Reporter:} {\large \textsc{\textbf{Alain TCHANA, Associate Professor, National Polytechnic Institute of Toulouse}}} \\ \\
+{\Large President:} \textbf{{\large \textsc{XXXXX XXXXX, Associate Professor, University of Yaounde I}}} \\ \\
+
 {\Large Examiner:} {\large \textsc{\textbf{Bernab\'{e} BATCHAKUI, Senior Lecturer, University of Yaounde I}}}
 \end{tabular}\\
 \vspace{6.5mm}
@@ -81,6 +81,23 @@
 {\Large \textcolor{darkgray}{Academic year 2016-2017}}\\
 {\Large \textcolor{darkgray}{Defended the 08th September 2017}}
 \end{tabular}
+
+%Front page corner design...read ornaments documentation for more info
+%Peterson Yuhala
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm,color=darkgray]
+\node (nworn) [shift={(5mm,-5mm)}, anchor=north west, on chain ] at (current page.north west) {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,17}
+\node [on chain] {\pgfornament[width=10mm]{19}};
+\node (neorn) [on chain] {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,25}
+\node [continue chain=going below, on chain] {\pgfornament[width=10mm]{24}};
+\node (seorn) [on chain] {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,17}
+\node [continue chain=going left, on chain] {\pgfornament[width=10mm]{24}};
+\node (sworn) [on chain] {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,25}
+\node [continue chain=going above, on chain] {\pgfornament[width=10mm]{24}};
+\end{tikzpicture}
 % \begin{tikzpicture}[remember picture, overlay]
 %  \begin{scope}[shift={(current page.south west)},shift={(1,1)},scale=1]
 %  \shade[ball color=darkgray,opacity=.6] (0,0) circle (10ex);
@@ -94,7 +111,7 @@
 %  \end{tikzpicture}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cornerplus{61}{85}
+%\cornerplus{41}{88}
 \end{center}
 
 

@@ -9,9 +9,9 @@
 \addstarredchapter{Introduction}
 \markboth{Introduction}{}
 \section*{CONTEXT}
-\initial{S}erver virtualization allows the multiplexing of hardware resources on a physical computer for virtual machines\footnote{A virtual machine is the billing unit in the cloud. One consumes virtual machines possessing computing resources} (VM) that can then be purchased by companies in order to achieve power saving costs, machine acquirement savings, avoid licensing costs and servers maintenance. The server virtualization market is gaining demand as organizations seek to improve their business growth by shifting from on-premise to cloud based. Cloud providers such as Amazon, Microsoft, IBM, Google must ensure the isolation of virtual machines between them and make sure that a virtual machine possesses the resources for which a customer paid for the \acrshort{sla} to be met. To achieve this, they use server virtualization systems commonly known as hypervisors or virtual machine monitors (VMMs). Several hypervisors exist but our work relies on the Xen virtualization system firstly due to its \glspl{ops} nature, secondly because it is the hypervisor used by the Amazon Web Service \citep{aws-ec2}, who is the world leader cloud infrastructure provider \citep{aws-leader}. 
+\initial{S}\lipsum[2] 
 
-\par Xen is a server virtualization system that replaces the traditional operating system and runs directly on the hardware. It runs virtual machines in environments known as \textbf{domains}, which encapsulate a complete running virtual environment \citep{xen_book}. For the sake of simplicity and maintainability, the original operating system is embedded in a particular domain called \textbf{dom0} which stands for \textbf{domain 0} (the other domains are called \textbf{domU} meaning \textbf{domain unpriviledged}). The dom0 embeds administration tools for managing virtual machines (monitoring and configuration) in the overall \glspl{dc}. The most obvious task performed by the dom0 is to handle devices on behalf of the domU guests. It  includes \textbf{\glspl{dd}s} which provide access to the hardware as shown on Figure \ref{fig:arch_simple_xen}. The dom0 is therefore granted privileged access rights and can be seen as an extension of the hypervisor.
+\par \lipsum[2]
 
 \begin{figure}[!h]
 	\centering
@@ -22,7 +22,7 @@
 
 \section*{PROBLEMATIC}
 
-In order to perform all these tasks, the dom0 requires computing resources. As computing resources, we refer to \acrshort{cpu} and memory since the other resources such as network and disk are not significantly involved in these tasks. Resource allocation to the dom0 is a serious problem, especially in \acrshort{numa} architectures which are commonly used in today's \glspl{dc}s \citep{numa-most}. Concretely, cloud providers are faced with this essential question: 
+\lipsum[2]
 
 \begin{bidentidad}{Question}
 \begin{itemize}
@@ -47,6 +47,5 @@ The rest of the document is structured as follows:
 \begin{itemize}
     \item \textbf{Background} in which we enrich our vocabulary and present some mechanisms in the Xen architecture for a better understanding of the work and what follows;
     \item \textbf{Problem statement and assessment} where we discuss about the questions raised in the problematic and prove it is relevant;
-    \item \textbf{Contribution} in which we describe our model, with a view on the overall architecture and a detailed presentation of the different model components;
-    \item \textbf{Implementation and Evaluation} where we describe how our model has been developed, the different software tools used and how our solution performs compared to the existing solutions in order to verify if our solution meets the objectives defined.
+    
 \end{itemize} 
