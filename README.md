@@ -2,7 +2,7 @@
 This repository contains a thesis latex project template based on the [University of Bristol]( https://github.com/pmem/pmdk) latex template. The project is best suited for ENSP students but anyone can customize it to suit his/her needs.
 
 ### Prerequisites
-In order to follow the tutorial smoothly, start by installing latex on your machine and any latex editor that suits you; I use T[TexStudio]( https://github.com/pmem/pmdk) latex editor. Installing and configuring these is beyond the scope of this tutorial. To use this template with minimal hiccups, you should have a fairly good level of latex knowledge.
+In order to follow the tutorial smoothly, start by installing latex on your machine and any latex editor that suits you; I use [TexStudio]( https://github.com/pmem/pmdk) latex editor. Installing and configuring these is beyond the scope of this tutorial. To use this template with minimal hiccups, you should have a fairly good level of latex knowledge.
 
 
 ## Downloading the project to your machine 
@@ -26,42 +26,25 @@ The frontmatter consists of the front page, title, gloassaries, abstracts and de
 
 ## Glossaries
 Glossary items are added in the `memoirthesis.tex` file using the below syntax
+```
+\newglossaryentry{bench}
+{
+	name = Benchmark,
+    description = {In computer science, a benchmark is a test to measure the performance of a system to compare it to others},
+    plural = benchmark
+}
+```
+Read the [glossaries documentation](https://www.sharelatex.com/learn/Glossaries) on ShareLatex for more information
 
+## Abstract, titles, dedications
+Modifying these is as simple as ABC...change the default lipsum text and enter what you want. Compile each time and view the pdf till you are satisfied with the outcome
 
+## Chapters
+Each chapter starts with a small mini table of contents. Modify the corresponding tex file. All figures should be put in the
+`figxx` directory for the sake of neatness
 
 #### Troubleshooting
-In case you get an `Aborted (core dumped)` error after running the program, simply delete the poolfile and create a new one.
-
-
-
-
-### Compiling and Testing the queue-llist program
-#### Quick intro
-This program is similar to the one above. It creates two persistent queues q1 and q2 based on linked lists. It then continuously enqueues and dequeues an item from both lists alternatively until the `ctrl-c` signal is sent to the process. The program then tells us whether the item is present in either queues.
-#### Compiling 
-To compile the queue-llist program cd into the queue-llist directory, assuming your current working directory is `pmdk/src/examples/libpmemobj` . Then run the make file
-
-```
-cd queue-llist
-make
-```
-#### Testing
-After a successful compilation, the executable file  `fifo` is created. You don't need to manually create the poolfile here; it is created in the program.
-
-The program takes two arguments : the path to a poolfile and the item (use any character). The following command runs the program on a poolfile and 'a' as the content of the node item. If the poolfile exists, the program uses it. Else, it creates a poolfile with the same name. Be careful not to use the same poolfile used in the preceding program.
-
-```
-./fifo /dev/shm/poolfile a
-```
-The program continuously prints statements indicating whether the item has been enqueued or dequeued from either queues.
-Hit `ctrl-c` to start the signal handler in the program. The signal handler stops the infinite loop and tells us whether our program is fault resilient or not.
-
-#### Troubleshooting
-In case you get an `Aborted (core dumped)` error after running the program, simply delete the poolfile and create a new one.
-
-
-
-
+For any strange errors, latex StackExchange forum is your best bet...
 
 ## Author
 
@@ -69,5 +52,6 @@ In case you get an `Aborted (core dumped)` error after running the program, simp
 
 
 ## Acknowledgments
+[ShareLateX](https://www.sharelatex.com)
 
 * PMDK Source code : https://github.com/pmem/pmdk
