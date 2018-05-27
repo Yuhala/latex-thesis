@@ -1,0 +1,101 @@
+\select@language {english}
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries Dedication} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries i}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries Acknowledgements} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries ii}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries Abbreviations} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries iii}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries Glossary} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries v}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries Abstract} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries vi}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries R\'{e}sum\'{e}} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries vii}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries List of Tables} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries viii}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries List of Figures} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries ix}\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries } \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries }\par \penalty \@M 
+\hspace {-0.60cm}{\nag@@warning@vi \bfseries Table of Contents} \penalty \@M \unhbox \voidb@x \hbox {}\hfill {\nag@@warning@vi \bfseries xi}\par \penalty \@M 
+\contentsline {paragraph}{Keywords: Virtualization, Resource, Memory, Processor, Location.}{v}
+\contentsline {paragraph}{Mot cl\'{e}s: Virtualisation, M\'{e}moire, Ressource, Processeur, Emplacement.}{vi}
+\contentsline {starchapter}{Introduction}{1}
+\contentsline {chapter}{\chapternumberline {1}Background}{4}
+\contentsline {section}{\numberline {1.1}Server virtualization}{5}
+\contentsline {subsection}{\numberline {1.1.1}Types of server virtualization systems}{5}
+\contentsline {subsubsection}{\numberline {1.1.1.1}Full virtualization}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {subsubsection}{\numberline {1.1.1.2}OS level virtualization}{5}
+\contentsline {paragraph}{}{6}
+\contentsline {subsubsection}{\numberline {1.1.1.3}Hardware assisted virtualization}{6}
+\contentsline {subsubsection}{\numberline {1.1.1.4}Paravirtualization}{6}
+\contentsline {subsection}{\numberline {1.1.2}Advantages of server virtualization}{7}
+\contentsline {paragraph}{Reduced physical servers.}{7}
+\contentsline {paragraph}{Better availability.}{7}
+\contentsline {paragraph}{Better performance.}{7}
+\contentsline {paragraph}{Security enhanced.}{7}
+\contentsline {paragraph}{Anti-obsolescence warranty.}{8}
+\contentsline {paragraph}{Gain on licensing costs.}{8}
+\contentsline {paragraph}{Simplified backups.}{8}
+\contentsline {paragraph}{\gls {brp} easier to manage \citep {vttools}.}{8}
+\contentsline {paragraph}{Test without paying.}{8}
+\contentsline {paragraph}{A stepping stone to the private cloud \citep {vttools}.}{8}
+\contentsline {subsection}{\numberline {1.1.3}Some server virtualization systems}{9}
+\contentsline {section}{\numberline {1.2}\acrshort {numa} architecture}{9}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {section}{\numberline {1.3}\acrshort {io} mechanism in Xen}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {subsection}{\numberline {1.3.1}Network \acrshort {io} mechanism}{12}
+\contentsline {subsubsection}{\numberline {1.3.1.1}Packet transmission}{12}
+\contentsline {subsection}{\numberline {1.3.2}Packet reception}{12}
+\contentsline {paragraph}{}{13}
+\contentsline {subsection}{\numberline {1.3.3}Block \acrshort {io} mechanism}{14}
+\contentsline {paragraph}{}{15}
+\contentsline {chapter}{\chapternumberline {2}Problem statement and assessment}{16}
+\contentsline {section}{\numberline {2.1}($Q_1$) Dom0 sizing}{17}
+\contentsline {paragraph}{}{17}
+\contentsline {subsection}{\numberline {2.1.1}Consequences of an undersized dom0}{18}
+\contentsline {paragraph}{Impact on user's applications.}{18}
+\contentsline {paragraph}{Impact on virtual machine management tasks.}{19}
+\contentsline {paragraph}{Impact on \glspl {dc} management services.}{19}
+\contentsline {subsection}{\numberline {2.1.2}Consequence of an oversized dom0}{21}
+\contentsline {section}{\numberline {2.2}($Q_2$) Dom0 location and Review}{21}
+\contentsline {paragraph}{Performance of \acrshort {io} intensive applications.}{21}
+\contentsline {paragraph}{Virtual machine migration.}{21}
+\contentsline {section}{\numberline {2.3}Review}{24}
+\contentsline {chapter}{\chapternumberline {3}Contribution}{25}
+\contentsline {section}{\numberline {3.1}Container composition}{27}
+\contentsline {section}{\numberline {3.2}Resource allocation to the main container}{27}
+\contentsline {section}{\numberline {3.3}Resource allocation to secondary containers}{29}
+\contentsline {subsection}{\numberline {3.3.1}Memory allocation}{29}
+\contentsline {subsection}{\numberline {3.3.2}Processor allocation}{30}
+\contentsline {paragraph}{domU shutdown and migration operations.}{30}
+\contentsline {paragraph}{\acrshort {io} management operations.}{31}
+\contentsline {section}{\numberline {3.4}Our approach advantages}{31}
+\contentsline {chapter}{\chapternumberline {4}Implementation and Evaluation}{33}
+\contentsline {section}{\numberline {4.1}Implementation}{34}
+\contentsline {subsection}{\numberline {4.1.1}The hypervisor}{34}
+\contentsline {subsection}{\numberline {4.1.2}The guest \acrshort {os}}{34}
+\contentsline {subsection}{\numberline {4.1.3}Development tool}{34}
+\contentsline {subsubsection}{\numberline {4.1.3.1}The compiler}{34}
+\contentsline {subsubsection}{\numberline {4.1.3.2}The editor}{34}
+\contentsline {section}{\numberline {4.2}Evaluation}{35}
+\contentsline {subsection}{\numberline {4.2.1}Benchmark 1: Load generated on the dom0 due to domUs activities}{35}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Experimental Setup}{35}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Experimental Results}{35}
+\contentsline {subsection}{\numberline {4.2.2}Benchmark 2: Migration time under high load conditions}{36}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Experimental Setup}{36}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Experimental Results}{36}
+\contentsline {subsection}{\numberline {4.2.3}Benchmark 3: \acrshort {io} performance as a result of locality}{36}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Experimental Setup}{36}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Experimental Results}{37}
+\contentsline {subsection}{\numberline {4.2.4}Benchmark 4: Migration time as a result to locality}{37}
+\contentsline {subsubsection}{\numberline {4.2.4.1}Experimental Setup}{37}
+\contentsline {subsubsection}{\numberline {4.2.4.2}Experiment Results}{37}
+\contentsline {section}{\numberline {4.3}Review}{37}
+\contentsline {starchapter}{Conclusion}{39}
+\contentsline {chapter}{Annex}{40}
+\contentsline {paragraph}{}{40}
+\contentsfinish 

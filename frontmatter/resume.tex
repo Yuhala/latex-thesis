@@ -1,0 +1,19 @@
+%
+% File: abstract.tex
+% Author: V?ctor Bre?a-Medina
+% Description: Contains the text for thesis abstract
+%
+% UoB guidelines:
+%
+% Each copy must include an abstract or summary of the dissertation in not
+% more than 300 words, on one side of A4, which should be single-spaced in a
+% font size in the range 10 to 12. If the dissertation is in a language other
+% than English, an abstract in that language and an abstract in English must
+% be included.
+
+\chapter*{R\'{e}sum\'{e}}
+\initial{L}a virtualisation des serveurs offre la possibilit\'{e} de d\'{e}couper de gros serveurs physiques sous-utilis\'{e}s en petites machines virtuelles parall\`{e}les, permettant \`{a} diverses applications de s'ex\'{e}cuter dans des environnements isol\'{e}s sur une plate-forme mat\'{e}rielle partag\'{e}e. Une motivation cl\'{e} pour appliquer la virtualisation des serveurs est d'am\'{e}liorer  l'utilisation des ressources mat\'{e}rielles tout en maintenant une qualit\'{e} de service raisonnable. Cependant, un tel objectif ne peut \^{e}tre atteint sans une gestion efficace des ressources. Bien que la plupart des ressources physiques, telles que les processeurs et les p\'{e}riph\'{e}riques d'E/S, soient partag\'{e}es entre les machines virtuelles \`{a} l'aide du d\'{e}coupage temporel et peuvent \^{e}tre programm\'{e}es avec souplesse en fonction de la priorit\'{e}, l'allocation d'une quantit\'{e} appropri\'{e}e de ressources \`{a} la machine virtuelle privil\'{e}gi\'{e}e s'av\`{e}re plus d\'{e}licate. En effet, ce dernier est charg\'{e} d'ex\'{e}cuter un ensemble de t\^{a}ches pour le bon fonctionnement des machines virtuelles. Diff\'{e}rentes machines virtuelles g\'{e}n\`{e}rent une charge variable sur la machine virtuelle privil\'{e}gi\'{e}e. M\^{e}me une seule machine virtuelle g\'{e}n\`{e}re une charge variable pendant son ex\'{e}cution. Une strat\'{e}gie optimale de gestion des ressources pour la machine virtuelle privil\'{e}gi\'{e}e doit permettre d'ajuster dynamiquement la m\'{e}moire et l'allocation du processeur de ce dernier et dans le cas particulier d'une architecture multiprocesseur non sym\'{e}trique, comme dans une architecture \`{a} acc\`{e}s  m\'{e}moire non uniforme, permettre d'ajuster l'emplacement de ses ressources. Ce travail pr\'{e}sente une approche pour l'allocation des ressources \`{a} la machine virtuelle privil\'{e}gi\'{e}e qui garantit que ce dernier poss\`{e}de ce dont il a besoin \`{a} tout moment, en le d\'{e}composant en des groupes sp\'{e}ciaux appel\'{e}s conteneur principal et conteneurs secondaires avec de nouveaux algorithmes d'ordonnancement et d'allocation de m\'{e}moire. Nous avons mis en \oe{}uvre l'approche propos\'{e}e pour les h\^{o}tes para-virtualis\'{e}s dans l'hyperviseur Xen. Par rapport \`{a} l'impl\'{e}mentation native de Xen, nous r\'{e}alisons en moyenne 12\% de gain de performance sur un ensemble de t\^{a}ches et fournissons une architecture \'{e}volutive pour la machine virtuelle privil\'{e}gi\'{e}e.
+
+\paragraph{Mot cl\'{e}s: Virtualisation, M\'{e}moire, Ressource, Processeur, Emplacement.}
+
+\clearpage

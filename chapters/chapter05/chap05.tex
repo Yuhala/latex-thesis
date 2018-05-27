@@ -1,0 +1,31 @@
+\chapter{Implementation}
+\label{chap:implem}
+\textit{\initial{I}n this chapter, we will give some details of implementation, the operating systems we used and the development tools we used. The plan of this chapter is as follows:
+}
+
+\minitoc
+
+\section{The hypervisor}
+
+In order to implement our solution, we had to modify a hypervisor in order to take into account of new design and scheduling algorithms. Since our work is based on the Xen architecture with its priviledged domain, we used this latter to implement our solution. Let's note that, our solution is not only specific to Xen but two all hypervisors whose architecture is based on a priviledged guest whose role is to execute a number of tasks on behalf of some other guests. 
+
+\textbf{Xen} is a hypervisor written in \textbf{C}, \textbf{Assembler} and \textbf{Python}. Its source code is composed of about $5000$ files containing more than a million lines of code. To date, Xen is now at version \textbf{4.9} but for stability issue, we worked on its \textbf{4.8} version.
+
+\section{The guest \acrshort{os}}
+It is import to choose an \acrshort{os} to work on, since the \glspl{dd} code and the \glspl{interrupt} handlers depends on the \acrshort{os}. In this work, we choose \textbf{Linux} for: 
+
+\begin{itemize}
+	\item its \glspl{ops} nature which permits us to modify the source code,
+    \item its large community of developers, which is active both in native or virtualized domain,
+    \item its ability to integrate paravirtualization offered by \textbf{Xen}.
+\end{itemize}
+
+The Linux \glspl{kernel} is written in \textbf{C} and \textbf{Assembler}. The source code of Linux is composed of about 14000 files, distributed in about 1000 folders containing about 6 million lines of code. To date, Linux is now at version \textbf{4.12.9} but for a compatibility issue with our Xen version, we worked with version \textbf{4.9}.
+
+\section{Development tool}
+\subsection{The compiler}
+To compile the Linux \glspl{kernel} , the compilator \textbf{\acrshort{gnu} Compiler Collection (GCC)} must be used. GCC is a set of compilators created by the projet \acrshort{gnu}. GCC is a free software enabling you to compile many languages such as C, C++, Objective-C, Java, Ada and Fortran. In order to use it, we need the \textbf{tool} make to call the GCC compiler. We used the most recent version to date, \textbf{4.2}.
+\subsection{The editor}
+
+When working on a project containing millions of lines of code such as Linux or Xen, it is important to use an integrated development environment (IDE). However, the disadvantage of IDEs is that they must use their compiler, which is not obvious when programming in the kernel. We opted for the \textbf{Vim editor} and the \textbf{Cscope navigation tool}. Csope is a Linux tool for navigation and exploration of symbols, definitions of symbols, directory structures and others. It is an integrated tool in Vim. Initially built to work with C code, it currently supports C ++ and Java. During this work, we used the most recent version to date, \textbf{8.0}.
+

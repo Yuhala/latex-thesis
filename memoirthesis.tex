@@ -1,0 +1,818 @@
+%\title{University of Bristol Thesis Template}
+\RequirePackage[l2tabu]{nag}		% Warns for incorrect (obsolete) LaTeX usage
+%
+%
+% File: memoirthesis.tex
+% Author: Victor Brena
+% Description: Contains the thesis template using memoir class,
+% which is mainly based on book class but permits better control of 
+% chapter styles for example. This template is an adaptation and 
+% modification of Oscar's.
+% 
+% Memoir is a flexible class for typesetting poetry, fiction, 
+% non-fiction and mathematical works as books, reports, articles or
+% manuscripts. CTAN repository is found at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
+%
+%
+% UoB guidelines for thesis presentation were found at:
+% http://www.bris.ac.uk/esu/pg/pgrcop11-12topic.pdf#page=49
+%
+% UoB guidelines:
+%
+% The dissertation must be printed on A4 white paper. Paper up to A3 may be used
+% for maps, plans, diagrams and illustrative material. Pages (apart from the
+% preliminary pages) should normally be double-sided.
+%
+% Memoir class loads useful packages by default (see manual).
+\documentclass[a4paper,11pt,leqno,oneside]{memoir} %add 'draft' to turn draft option on (see below)
+%
+%
+% Adding metadata:
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{calligra}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,
+		       automata,backgrounds,
+		       petri,topaths}%geometric/algebraic description.
+%\usepackage[version=0.96]{pgf}			%PGF/TikZ is a tandem of languages for producing vector graphics from a 
+
+\usepackage{tcolorbox}
+
+\newtcolorbox{bidentidad}[2][]{
+  enhanced,
+  skin=enhancedlast jigsaw,
+  attach boxed title to top left={xshift=-4mm,yshift=-0.5mm},
+  fonttitle=\bfseries\sffamily,
+  colbacktitle=darkgray,
+  colframe=darkgray,
+  interior style={
+    top color=blue!3,
+    bottom color=red!3
+  },
+  boxed title style={
+    empty,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0pt
+  },
+  underlay boxed title={
+    \fill[darkgray] 
+      (title.north west) -- 
+      (title.north east) -- 
+      +(\tcboxedtitleheight-1mm,-\tcboxedtitleheight+1mm) -- 
+      ([xshift=4mm,yshift=0.5mm]frame.north east) -- 
+      +(0mm,-1mm) -- 
+      (title.south west) -- cycle;
+    \fill[darkgray] 
+      ([yshift=-0.5mm]frame.north west) -- 
+      +(-0.4,0) -- 
+      +(0,-0.3) -- cycle;
+    \fill[darkgray] 
+      ([yshift=-0.5mm]frame.north east) -- 
+      +(0,-0.3) -- 
+      +(0.4,0) -- cycle; 
+  },
+title = Questions
+}
+
+
+\newtcolorbox{bidentidad2}[2][]{
+  enhanced,
+  skin=enhancedlast jigsaw,
+  attach boxed title to top left={xshift=-4mm,yshift=-0.5mm},
+  fonttitle=\bfseries\sffamily,
+  colbacktitle=darkgray,
+  colframe=darkgray,
+  interior style={
+    top color=blue!3,
+    bottom color=red!3
+  },
+  boxed title style={
+    empty,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0pt
+  },
+  underlay boxed title={
+    \fill[darkgray] 
+      (title.north west) -- 
+      (title.north east) -- 
+      +(\tcboxedtitleheight-1mm,-\tcboxedtitleheight+1mm) -- 
+      ([xshift=4mm,yshift=0.5mm]frame.north east) -- 
+      +(0mm,-1mm) -- 
+      (title.south west) -- cycle;
+    \fill[darkgray] 
+      ([yshift=-0.5mm]frame.north west) -- 
+      +(-0.4,0) -- 
+      +(0,-0.3) -- cycle;
+    \fill[darkgray] 
+      ([yshift=-0.5mm]frame.north east) -- 
+      +(0,-0.3) -- 
+      +(0.4,0) -- cycle; 
+  },
+title = More generally;
+}
+
+\usepackage{enumitem}
+\usepackage{pifont}
+\tcbuselibrary{skins}
+\usepackage{psvectorian}
+\renewcommand*{\psvectorianDefaultColor}{Green}%
+\usepackage{datetime}
+\usepackage{ifpdf}
+\ifpdf
+\pdfinfo{
+   /Author (MVONDO DJOB BARBE THYSTERE)
+   /Title (MII ENSPY)
+   /Keywords (Xen; Dom0;Resources)
+   /CreationDate (D:\pdfdate)
+}
+\fi
+% When draft option is on. 
+\ifdraftdoc 
+	\usepackage{draftwatermark}				%Sets watermarks up.
+	\SetWatermarkScale{0.3}
+	\SetWatermarkText{\bf Draft: \today}
+\fi
+%
+% Declare figure/table as a subfloat.
+\newsubfloat{figure}
+\newsubfloat{table}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\usetikzlibrary{chains}
+%\usepackage{background}
+% \backgroundsetup{
+% scale=1,
+% opacity=1,
+% angle=0,
+% color=black,
+% contents={%
+% \begin{tikzpicture}[every node/.style={inner sep=0pt}]
+% \node[anchor=north west](CNW)
+% at (current page.north west) {\pgfornament[width=1.75cm]{61}};
+% \node[anchor=north east](CNE)
+% at (current page.north east) {\pgfornament[width=1.75cm,symmetry=v]{61}};
+% \node[anchor=south west](CSW)
+% at (current page.south west) {\pgfornament[width=1.75cm,symmetry=h]{61}};
+% \node[anchor=south east](CSE)
+% at (current page.south east) {\pgfornament[width=1.75cm,symmetry=c]{61}};
+% \end{tikzpicture}%
+%   }
+% }
+
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+% Better page layout for A4 paper, see memoir manual.
+\settrimmedsize{297mm}{210mm}{*}
+\setlength{\trimtop}{0pt} 
+\setlength{\trimedge}{\stockwidth} 
+\addtolength{\trimedge}{-\paperwidth} 
+\settypeblocksize{634pt}{448.13pt}{*} 
+\setulmargins{4cm}{*}{*} 
+\setlrmargins{*}{*}{1.5} 
+\setmarginnotes{17pt}{51pt}{\onelineskip} 
+\setheadfoot{\onelineskip}{2\onelineskip} 
+\setheaderspaces{*}{2\onelineskip}{*} 
+\checkandfixthelayout
+%
+\frenchspacing
+% Font with math support: New Century Schoolbook
+\usepackage{fouriernc}
+\usepackage[nohints]{minitoc}
+\usepackage{fancybox}
+\usepackage{makeidx}
+
+
+
+
+\definecolor{marron}{RGB}{60,30,10}
+\definecolor{darkblue}{RGB}{0,0,80}
+\definecolor{lightblue}{RGB}{80,80,80}
+\definecolor{darkgreen}{RGB}{0,80,0}
+\definecolor{darkgray}{RGB}{0,80,0}
+\definecolor{darkred}{RGB}{80,0,0}
+\definecolor{shadecolor}{rgb}{0.97,0.97,0.97}
+\usepackage{fourier-orns}
+\usepackage[T1]{fontenc}
+
+
+\makeatletter
+\def\headrule{{\color{darkgray}\raisebox{-2.1pt}[10pt][10pt]{\leafright} \hrulefill \raisebox{-2.1pt}[10pt][10pt]{~~~\decofourleft \decotwo\decofourright~~~} \hrulefill \raisebox{-2.1pt}[10pt][10pt]{ \leafleft}}}
+\makeatother
+
+\usepackage[
+final,
+stretch=10,
+protrusion=true,
+tracking=true,
+spacing=on,
+kerning=on,
+expansion=true]{microtype}
+
+\newcommand{\ornamento}{\vspace{-2em} \noindent \textcolor{darkgray}{\hrulefill~ \raisebox{-2.5pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone   \floweroneright \decotwo \aldineleft\decothreeright \decofourright \leafleft} ~  \hrulefill}}
+\newcommand{\ornpar}{\noindent \textcolor{darkgray}{ \raisebox{-1.9pt}[10pt][10pt]{\leafright} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone}}}
+\newcommand{\ornimpar}{\textcolor{darkgray}{\raisebox{-1.9pt}[10pt][10pt]{\decoone \floweroneright \decotwo \aldineleft \decothreeright \decofourright \leafleft} \hrulefill \raisebox{-1.9pt}[10pt][10pt]{\leafleft}}}
+%
+% UoB guidelines:
+%
+% Text should be in double or 1.5 line spacing, and font size should be
+% chosen to ensure clarity and legibility for the main text and for any
+% quotations and footnotes. Margins should allow for eventual hard binding.
+%
+% Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing 
+% enables double spacing but leaves single spaced for captions for instance. 
+\OnehalfSpacing 
+%
+% Sets numbering division level
+\setsecnumdepth{subsection} 
+\maxsecnumdepth{subsubsection}
+%
+% Chapter style (taken and slightly modified from Lars Madsen Memoir Chapter 
+% Styles document
+\usepackage{calc,soul,fourier}
+\makeatletter 
+\newlength\dlf@normtxtw 
+\setlength\dlf@normtxtw{\textwidth} 
+\newsavebox{\feline@chapter} 
+\newcommand\feline@chapter@marker[1][4cm]{%
+	\sbox\feline@chapter{% 
+		\resizebox{!}{#1}{\fboxsep=1pt%
+			\colorbox{darkgray}{\color{white}\thechapter}% 
+		}}%
+		\rotatebox{90}{% 
+			\resizebox{%
+				\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}% 
+			{!}{\scshape\so\@chapapp}}\quad%
+		\raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
+} 
+\newcommand\feline@chm[1][4cm]{%
+	\sbox\feline@chapter{\feline@chapter@marker[#1]}% 
+	\makebox[0pt][c]{% aka \rlap
+		\makebox[1cm][r]{\usebox\feline@chapter}%
+	}}
+\makechapterstyle{daleifmodif}{
+	\renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so} 
+	\renewcommand\chaptitlefont{\normalfont\Large\bfseries\scshape} 
+	\renewcommand\chapternamenum{} \renewcommand\printchaptername{} 
+	\renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par} 
+	\renewcommand\afterchapternum{\par\vskip\midchapskip} 
+	\renewcommand\printchaptertitle[1]{\color{darkgray}\chaptitlefont\raggedleft ##1\par}
+} 
+\makeatother 
+
+%\renewcommand\refname{\textbf{Reference}}
+\chapterstyle{daleifmodif}
+%
+% UoB guidelines:
+%
+% The pages should be numbered consecutively at the bottom centre of the
+% page.
+\renewcommand{\sectionmark}[1]{\markright{\thesection~- ~#1}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername~\thechapter~-~ #1}{}}
+
+\makepagestyle{myvf} 
+\makeoddfoot{myvf}{}{\ornimpar \\ \large \hfill \sffamily\bf \textcolor{black}{\leafNE ~~~ Page \thepage}
+}{} 
+\makeevenfoot{myvf}{}{\ornpar   \\ \large  \sffamily\bf \textcolor{black}{\thepage ~~~ \reflectbox{\leafNE}}  \hfill}{} 
+%\makeheadrule{myvf}{\textwidth}{\normalrulethickness} 
+\makeevenhead{myvf}{\leftmark}{\ornamento}{\rightmark} 
+\makeoddhead{myvf}{\leftmark}{\ornamento}{\rightmark}
+\pagestyle{myvf}
+
+
+%
+% Oscar's command (it works):
+% Fills blank pages until next odd-numbered page. Used to emulate single-sided
+% frontmatter. This will work for title, abstract and declaration. Though the
+% contents sections will each start on an odd-numbered page they will
+% spill over onto the even-numbered pages if extending beyond one page
+% (hopefully, this is ok).
+\newcommand{\clearemptydoublepage}{\newpage{\thispagestyle{empty}\cleardoublepage}}
+%
+%
+% Creates indexes for Table of Contents, List of Figures, List of Tables and Index
+\makeindex
+%\printglossaries 
+%below creates a list of abbreviations. \gls and related
+% commands are then used throughout the text, so that latex can automatically
+% keep track of which abbreviations have already been defined in the text.
+%
+% The import command enables each chapter tex file to use relative paths when
+% accessing supplementary files. For example, to include
+% chapters/brewing/images/figure1.png from chapters/brewing/brewing.tex we can
+% use
+% \includegraphics{images/figure1}
+% instead of
+% \includegraphics{chapters/brewing/images/figure1}
+\usepackage{import}
+
+% Add other packages needed for chapters here. For example:
+\usepackage{lipsum}					%Needed to create dummy text
+\usepackage{subcaption}
+\usepackage{amsfonts} 					%Calls Amer. Math. Soc. (AMS) fonts
+\usepackage[centertags]{amsmath}			%Writes maths centred down
+\usepackage{stmaryrd}					%New AMS symbols
+\usepackage{pgfplots}
+\pgfplotsset{yticklabel style={text width=3em,align=right}}
+
+\usepackage{amssymb}					%Calls AMS symbols
+\usepackage{amsthm}					%Calls AMS theorem environment
+\usepackage{newlfont}					%Helpful package for fonts and symbols
+\usepackage{layouts}					%Layout diagrams
+\usepackage{graphicx}					%Calls figure environment
+\usepackage{longtable,rotating}			%Long tab environments including rotation. 
+\usepackage[applemac]{inputenc}			%Needed to encode non-english characters 
+									%directly for mac
+\usepackage{color}
+\usepackage{colortbl}					%Makes coloured tables
+\usepackage{wasysym}					%More math symbols
+\usepackage{mathrsfs}					%Even more math symbols
+\usepackage{float}						%Helps to place figures, tables, etc. 
+\usepackage{verbatim}					%Permits pre-formated text insertion
+\usepackage{upgreek }					%Calls other kind of greek alphabet
+\usepackage{latexsym}					%Extra symbols
+\usepackage[numbers,sort&compress]{natbib}
+
+
+
+%\usepackage[style=authoryear,maxcitenames=2,uniquelist=false,sorting=nyt,backend=bibtex]{biblatex}
+%\usepackage[backend=biber,style=authoryear,sorting=nyt]{biblatex}
+%\addbibresource{thesisbiblio.bib}
+
+		%Calls bibliography commands 
+\usepackage{url}						%Supports url commands
+\usepackage{etex}						%eTeXÕs extended support for counters
+\usepackage{fixltx2e}					%Eliminates some in felicities of the 
+									%original LaTeX kernel
+%\usepackage[none]{hyphenat}
+\usepackage[spanish,english]{babel}		%For languages characters and hyphenation
+\usepackage{memhfixc}					%Must be used on memoir document 
+									%class after hyperref
+\usepackage{color}                    				%Creates coloured text and background
+
+\usepackage{enumerate}					%For enumeration counter
+\usepackage{footnote}					%For footnotes
+\usepackage{afterpage}
+\usepackage[object=vectorian]{pgfornament}
+\usetikzlibrary{shapes.geometric,calc}
+\definecolor{fondpaille}{cmyk}{0,0,0.1,0}
+\usepackage{pagecolor}
+\usepackage{microtype}					%Makes pdf look better.
+\usepackage{rotfloat}					%For rotating and float environments as tables, 
+									%figures, etc. 
+\usepackage{alltt}						%LaTeX commands are not disabled in 
+									%verbatim-like environment
+
+				%To use diverse features from tikz	
+         
+\tcbset{
+    Baystyle/.style={
+        sharp corners,
+        enhanced,
+        boxrule=6pt,
+        colframe=OliveGreen,
+        height=600pt,
+        width=500pt,
+        borderline={8pt}{-11pt}{},
+    }
+}
+
+
+%							
+%Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
+% (the first line of paragraph at the end of a page)
+\widowpenalty=1000
+\clubpenalty=1000
+%
+% New command definitions for my thesis
+%
+\newcommand{\keywords}[1]{\par\noindent{\small{\bf Keywords:} #1}} %Defines keywords small section
+\newcommand{\parcial}[2]{\frac{\partial#1}{\partial#2}}                             %Defines a partial operator
+\newcommand{\vectorr}[1]{\mathbf{#1}}                                                        %Defines a bold vector
+\newcommand{\vecol}[2]{\left(                                                                         %Defines a column vector
+	\begin{array}{c} 
+		\displaystyle#1 \\
+		\displaystyle#2
+	\end{array}\right)}
+\newcommand{\mados}[4]{\left(                                                                       %Defines a 2x2 matrix
+	\begin{array}{cc}
+		\displaystyle#1 &\displaystyle #2 \\
+		\displaystyle#3 & \displaystyle#4
+	\end{array}\right)}
+\newcommand{\pgftextcircled}[1]{                                                                    %Defines encircled text
+    \setbox0=\hbox{#1}%
+    \dimen0\wd0%
+    \divide\dimen0 by 2%
+    \begin{tikzpicture}[baseline=(a.base)]%
+        \useasboundingbox (-\the\dimen0,0pt) rectangle (\the\dimen0,1pt);
+        \node[circle,draw,outer sep=0pt,inner sep=0.1ex] (a) {#1};
+    \end{tikzpicture}
+}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand{\myrowcolour}{\rowcolor[gray]{0.925}}
+
+\newcommand{\range}[1]{\textnormal{range }#1}                                             %Defines range operator
+\newcommand{\innerp}[2]{\left\langle#1,#2\right\rangle}                                 %Defines inner product
+\newcommand{\prom}[1]{\left\langle#1\right\rangle}                                         %Defines average operator
+\newcommand{\tra}[1]{\textnormal{tra} \: #1}                                                       %Defines trace operator
+\newcommand{\sign}[1]{\textnormal{sign\,}#1}                                                   %Defines sign operator
+\newcommand{\sech}[1]{\textnormal{sech} #1}                                                  %Defines sech
+\newcommand{\diag}[1]{\textnormal{diag} #1}                                                    %Defines diag operator
+\newcommand{\arcsech}[1]{\textnormal{arcsech} #1}                                       %Defines arcsech
+\newcommand{\arctanh}[1]{\textnormal{arctanh} #1}                                         %Defines arctanh
+%Change tombstone symbol
+
+\newcommand{\blackged}{\hfill$\blacksquare$}
+\newcommand{\whiteged}{\hfill$\square$}
+\newcounter{proofcount}
+\renewenvironment{proof}[1][\proofname.]{\par
+ \ifnum \theproofcount>0 \pushQED{\whiteged} \else \pushQED{\blackged} \fi%
+ \refstepcounter{proofcount}
+ \normalfont 
+ \trivlist
+ \item[\hskip\labelsep
+       \itshape
+   {\bf\em #1}]\ignorespaces
+}{%
+ \addtocounter{proofcount}{-1}
+ \popQED\endtrivlist
+}
+%
+%
+% New definition of square root:
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+%
+% My caption style
+\newcommand{\mycaption}[2][\@empty]{
+	\captionnamefont{\scshape} 
+	\changecaptionwidth
+	\captionwidth{0.9\linewidth}
+	\captiondelim{.\:} 
+	\indentcaption{0.75cm}
+	\captionstyle[\centering]{}
+	\setlength{\belowcaptionskip}{10pt}
+	\ifx \@empty#1 \caption{#2}\else \caption[#1]{#2}
+}
+\newcommand*\circled[1]{\tikz[baseline]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+%
+% My subcaption style
+\newcommand{\mysubcaption}[2][\@empty]{
+	\subcaptionsize{\small}
+	\hangsubcaption
+	\subcaptionlabelfont{\rmfamily}
+	\sidecapstyle{\raggedright}
+	\setlength{\belowcaptionskip}{10pt}
+	\ifx \@empty#1 \subcaption{#2}\else \subcaption[#1]{#2}
+}
+%
+\newcommand{\sectionlinetwo}[2]{%
+  \nointerlineskip \vspace{.5\baselineskip}\hspace{\fill}
+  {\color{#1}
+    \resizebox{0.5\linewidth}{2ex}
+    {{%
+    {\begin{tikzpicture}
+    \node  (C) at (0,0) {};
+    \node (D) at (9,0) {};
+    \path (C) to [ornament=#2] (D);
+    \end{tikzpicture}}}}}%
+    \hspace{\fill}
+    \par\nointerlineskip \vspace{.5\baselineskip}
+  }
+%An initial of the very first character of the content
+\usepackage{Carrickc,ArtNouvc,Kramer,Konanur,Rothdn}
+\usepackage{lettrine}
+%\renewcommand\LettrineFontHook{\Rothdnfamily}
+\newcommand{\initial}[1]{%
+	\lettrine[lines=3,lhang=0.33,nindent=0em]{
+		\color{darkgray}
+     		{\textsc{#1}}}{}}
+     		
+\newcommand{\corner}[1]{%
+  \begin{tikzpicture}[color=darkgray,remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm,symmetry=v]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm,symmetry=h]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm,symmetry=c]{#1}};
+  \end{tikzpicture}%
+}
+\newcommand{\cornerplus}[2]{%
+  \begin{tikzpicture}[color=darkgray,remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm,symmetry=v]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm,symmetry=h]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm,symmetry=c]{#1}};
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[width=6.5cm,symmetry=h]{#2}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[width=6.5cm]{#2}};
+  \end{tikzpicture}%
+}
+\newcommand{\pt}[1]{%
+  \begin{tikzpicture}[color=darkgray,remember picture, overlay]
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[symmetry=h]{#1}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[symmetry=h]{#1}};
+  \end{tikzpicture}%
+}
+%
+% Theorem styles used in my thesis
+%
+\AtBeginDocument{\renewcommand{\bibname}{References}}
+\AtBeginDocument{\renewcommand{\refname}{References}}
+
+\theoremstyle{plain}
+\newtheorem{theo}{Theorem}[chapter]
+\theoremstyle{plain}
+\newtheorem{prop}{Proposition}[chapter]
+\theoremstyle{plain}
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}[chapter]
+\theoremstyle{plain}
+\newtheorem{lema}{Lemma}[chapter]
+\theoremstyle{plain}
+\newtheorem{cor}{Corollary}[chapter]
+\theoremstyle{plain}
+\newtheorem{resu}{Result}[chapter]
+%
+% Hyphenation for some words
+%
+\hyphenation{res-pec-tively}
+\hyphenation{mono-ti-ca-lly}
+\hyphenation{hypo-the-sis}
+\hyphenation{para-me-ters}
+\hyphenation{sol-va-bi-li-ty}
+%
+%
+\usepackage[acronym]{glossaries}
+\makeglossary
+%%%%%%%%%%%%%%%%%%%%%%%%Abrreviations%%%%%%%%%%%%%%%%%
+\newacronym{enspy}{ENSPY}{\'{E}cole Nationale Sup\'{e}rieure Polytechnique Yaounde/National Advanced School of Engineering of Yaounde}
+\newacronym{inpt}{INPT}{National Polytechnic Institute of Toulouse}
+\newacronym{uy1}{UY1}{University of Yaounde I}
+\newacronym{enseeiht}{ENSEEIHT}{\'{E}cole nationale sup\'{e}rieure d'\'{e}lectrotechnique, d'\'{e}lectronique, d'informatique, d'hydraulique et des t\'{e}l\'{e}communications/National School of Electrical Engineering, Electronics, Computer Science, Hydraulics and Telecommunications of Toulouse}
+\newacronym{irit}{IRIT}{Toulouse Computer Science Research Institute}
+\newacronym{sla}{SLA}{Service-Level Agreement}
+\newacronym{cpu}{CPU}{Central Processing Unit}
+\newacronym{numa}{NUMA}{Non Uniform Memory Access}
+\newacronym{io}{I/O}{Input/Output}
+\newacronym{uma}{UMA}{Uniform Memory Access}
+\newacronym{os}{OS}{Operating System}
+\newacronym{ram}{RAM}{Random Access Memory}
+\newacronym{amd}{AMD}{Advanced Micro Devices}
+\newacronym{kvm}{KVM}{Kernel-based Virtual Machine}
+\newacronym{sme}{SME}{Small-to-Medium sized Enterprise}
+\newacronym{vse}{VSE}{Very Small Enterprise}
+\newacronym{it}{IT}{Information Technology}
+\newacronym{is}{IS}{Information System}
+\newacronym{erp}{ERP}{Enterprise Resource Planning}
+\newacronym{p2v}{P2V}{Physical to Virtual}
+\newacronym{smp}{SMP}{Symmetric Multiprocessing}
+\newacronym{pc}{PC}{Personal Computer}
+\newacronym{dma}{DMA}{Direct Memory Access}
+\newacronym{ec2}{EC2}{Elastic Compute Cloud}
+\newacronym{lts}{LTS}{Long Term Support}
+\newacronym{gb}{GB}{Gigabyte}
+\newacronym{mb}{MB}{Megabyte}
+\newacronym{vcpu}{VCPU}{Virtual CPU}
+\newacronym{qpi}{QPI}{QuickPath Interconnect}
+\newacronym{kb}{KB}{Kilobyte}
+\newacronym{gnu}{GNU}{GNU is Not UNIX}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%Glossary%%%%%%%%%%%%
+\newglossaryentry{bench}
+{
+	name = Benchmark,
+    description = {In computer science, a benchmark is a test to measure the performance of a system to compare it to others},
+    plural = benchmark
+}
+
+\newglossaryentry{bus}
+{
+	name = Bus,
+     description = {In computer science, a bus is a communication system that transfers data between components inside a computer, or between computers.},
+    plural = bus
+}
+
+
+\newglossaryentry{ops}
+{
+    name=Open source,
+    description={The open source designation, or "open source code", applies to software whose license meets criteria precisely established by the Open Source Initiative, that is, the possibilities of free redistribution, access to source code and the creation of derivative works.},
+    plural=open source
+}
+
+\newglossaryentry{interrupt}
+{
+	name = Interrupt,
+    description = {An interrupt is a signal from a device attached to a computer or from a program within the computer that requires the operating system to stop and figure out what to do next},
+    plural = interrupt
+}
+
+\newglossaryentry{dc}
+{
+	name = Data center,
+    description = {It represents a physical site on which are grouped components of the information system of a company (central computers, servers, storage bays, network and telecommunications equipment, etc.)
+},
+	plural = data center
+}
+
+\newglossaryentry{dd}
+{
+	name = Device driver,
+    description = {It is a computer program that operates or controls a particular type of device that is attached to a computer},
+    plural = device driver
+}
+
+\newglossaryentry{brp}
+{
+	name = Business recovery plan,
+    description = {It defines the process of creating prevention and recovery systems to deal with potential threats to a company},
+    plural = business recovery plan
+}
+
+\newglossaryentry{kernel}
+{
+	name = Kernel,
+    description = {It is a computer program that is the core of a computer's operating system, with complete control over everything in the system. It is the first program loaded on start-up.},
+    plural = kernel
+}
+
+\newglossaryentry{sc}
+{
+	name = Source code,
+    description = {A source code is a text that represents a program instructions as written by a programmer.},
+    plural = source code
+}
+
+
+\usepackage{chngcntr}
+\usepackage[section]{placeins}  
+\usepackage{titletoc}
+
+
+\begin{document}
+\sloppy
+% UoB guidlines:
+%
+% Preliminary pages
+% 
+% The five preliminary pages must be the Title Page, Abstract, Dedication
+% and Acknowledgements, Author's Declaration and Table of Contents.
+% These should be single-sided.
+% 
+% Table of contents, list of tables and illustrative material
+% 
+% The table of contents must list, with page numbers, all chapters,
+ % sections and subsections, the list of references, bibliography, list of
+% abbreviations and appendices. The list of tables and illustrations
+% should follow the table of contents, listing with page numbers the
+% tables, photographs, diagrams, etc., in the order in which they appear
+% in the text.
+% 
+\addtocontents{toc}{\hspace{-0.60cm}{\bf Dedication} \nobreak \mbox{}\hfill{\bf i}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf Acknowledgements} \nobreak \mbox{}\hfill{\bf ii}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf Abbreviations} \nobreak \mbox{}\hfill{\bf iii}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf Glossary} \nobreak \mbox{}\hfill{\bf v}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf Abstract} \nobreak \mbox{}\hfill{\bf vi}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf R\'{e}sum\'{e}} \nobreak \mbox{}\hfill{\bf vii}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf List of Tables} \nobreak \mbox{}\hfill{\bf viii}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf List of Figures} \nobreak \mbox{}\hfill{\bf ix}\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf } \nobreak \mbox{}\hfill{\bf }\par\nobreak}
+\addtocontents{toc}{\hspace{-0.60cm}{\bf Table of Contents} \nobreak \mbox{}\hfill{\bf xi}\par\nobreak}
+
+
+
+
+\frontmatter
+\pagenumbering{roman}
+%
+\input{frontmatter/title}
+\cleardoublepage
+
+\input{frontmatter/title2}
+\cleardoublepage
+\input{frontmatter/dedication}
+\clearemptydoublepage
+%
+\input{frontmatter/declaration}
+\clearemptydoublepage
+%
+\input{frontmatter/glossaries}
+\clearemptydoublepage
+
+%
+\input{frontmatter/abstract}
+\clearemptydoublepage
+%
+\input{frontmatter/resume}
+\clearemptydoublepage
+%
+
+
+\listoftables*
+
+\addtocontents{lot}{\par\nobreak\textbf{{\scshape Table} \hfill Page}\par\nobreak}
+\clearemptydoublepage
+%
+\listoffigures*
+\addtocontents{lof}{\par\nobreak\textbf{{\scshape Figure} \hfill Page}\par\nobreak}
+\cleardoublepage
+%
+
+\renewcommand{\contentsname}{Table of Contents}
+\maxtocdepth{subsection}
+
+\dominitoc
+\tableofcontents*
+%\addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Page}\par\nobreak}
+\markboth{TABLE OF CONTENTS}{}
+
+
+\clearemptydoublepage
+%
+
+%
+%
+% The bulk of the document is delegated to these chapter files in
+% subdirectories.
+\mainmatter
+%
+\clearemptydoublepage
+\import{chapters/chapter01/}{chap01.tex}
+\clearemptydoublepage
+\import{chapters/chapter02/}{chap02.tex}
+\clearemptydoublepage
+\import{chapters/chapter03/}{chap03.tex}
+\clearemptydoublepage
+\import{chapters/chapter04/}{chap04.tex}
+%\clearemptydoublepage
+%\import{chapters/chapter05/}{chap05.tex}
+\clearemptydoublepage
+\import{chapters/chapter06/}{chap06.tex}
+\clearemptydoublepage
+\import{chapters/chapter07/}{chap07.tex}
+%
+%
+% And the appendix goes here
+
+%
+% Apparently the guidelines don't say anything about citations or
+% bibliography styles so I guess we can use anything.
+\backmatter
+\bibliographystyle{siam}
+\refstepcounter{chapter}
+\markboth{REFERENCES}{}
+\bibliography{thesisbiblio}
+\markboth{REFERENCES}{}
+%\chapter*{REFERENCES}
+%\addstarredchapter{References}
+
+%\printbibliography[title={Book},type=book,heading=subbibliography]
+%\markboth{REFERENCES}{}
+%\printbibliography[title={Proceedings},type=article,heading=subbibliography]
+%\markboth{REFERENCES}{}
+%\printbibliography[title={Websites},type=misc,heading=subbibliography]
+%\markboth{REFERENCES}{}
+%\clearemptydoublepage
+\appendix
+\import{chapters/appendices/}{app0A.tex}
+\clearemptydoublepage
+%
+% Add index
+%\printindex
+%   
+\end{document}

@@ -1,0 +1,11 @@
+\chapter*{Conclusion}
+\label{chap:conclusion}
+\addstarredchapter{Conclusion}
+
+\section*{Review}
+This work reveals that resource allocation to the privileged domain is a serious question due to the consequences that can occur if this is not carefully managed. We explored the server virtualization system Xen to understand its architecture, and how it is implemented. We also learned about the architecture of the Linux \glspl{kernel} and the \acrshort{io} handlers. This enabled us to design and implement our solution taking into account the limitations of current solutions. Our design in addition to the numerous advantages of its architecture, performs better than the native implementation, on average, 12\% gain in performance for a given set of tasks. This work is currently the core of an article named "\textit{Resource management in virtualized systems: the privileged domain should not be overlooked}" and will be submitted to the "\textit{European Conference on Computer Systems 2018}", which is a major conference in the field of virtualization.
+
+
+\section*{Prospects}
+
+In order to improve on this work, the evaluations should be increased in order to evaluate every module developed. Furthermore, we can take a look at the network reception mechanism, since this aspect was not taken into account in our design. During the network packet reception, we can implement a hash function which should be able to identify the destined virtual machine and schedule the handlers to take the packet in a secondary container in charge of the virtual machine. Furthermore, we can go beyond and realize a weighting system where a module monitors the network activity of the virtual machines and increases the weight of each virtual machine so as when a packet comes from the exterior, the resources needed to handle this packet should be taken from the virtual machine with the greatest weight. This will permit each virtual machine to contribute to the network reception mechanism and the lesser the network activity of a virtual machine, the lower the probability of its resource being used to handle incoming packets but the higher the network activity of a virtual machine, the greater the probability of its resource being used to handle incoming packets. 

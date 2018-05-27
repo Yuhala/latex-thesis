@@ -1,0 +1,20 @@
+%
+% File: abstract.tex
+% Author: V?ctor Bre?a-Medina
+% Description: Contains the text for thesis abstract
+%
+% UoB guidelines:
+%
+% Each copy must include an abstract or summary of the dissertation in not
+% more than 300 words, on one side of A4, which should be single-spaced in a
+% font size in the range 10 to 12. If the dissertation is in a language other
+% than English, an abstract in that language and an abstract in English must
+% be included.
+
+\chapter*{Abstract}
+%\begin{SingleSpace}
+\initial{S}erver virtualization offers the ability to slice large, underutilized physical servers into smaller, parallel virtual machines, enabling diverse applications to run in isolated environments on a shared hardware platform. A key motivation for applying server virtualization is to improve hardware resource utilization while maintaining a reasonable quality of service. However, such a goal cannot be achieved without efficient resource management. Though most physical resources, such as processor cores and I/O devices, are shared among virtual machines using time slicing and can be scheduled flexibly based on priority, allocating an appropriate amount of resources to the privileged virtual machine is more challenging. Indeed, the latter is responsible to carry out a set of tasks for the good execution of virtual machines. Different virtual machines generate varying load on the privileged one. Even a single virtual machine generates varying load during its execution. An optimal resource management strategy for the privileged virtual machine thus needs to dynamically adjust memory and processor allocation, and in case of non-symmetric multiprocessing architecture as non-uniform memory access, it should adjust the location of these resources. This work presents a design for the privileged virtual machine which ensures the latter possesses what it needs at any moment, by decomposing the latter in special groups called main container and secondary containers with new scheduling and memory allocation algorithms. We have implemented the proposed design for para-virtualized guests in the Xen hypervisor. Compared to the current Xen native implementation, we achieve, on average, 12\% gain in performance over a set of tasks and provide a scalable architecture for the privileged virtual machine. 
+
+\paragraph{Keywords: Virtualization, Resource, Memory, Processor, Location.} 
+%\end{SingleSpace}
+\clearpage

@@ -1,0 +1,31 @@
+%
+% file: dedication.tex
+% author: V?ctor Bre?a-Medina
+% description: Contains the text for thesis dedication
+%
+
+\chapter*{Dedication}
+%\begin{SingleSpace}
+\vspace{3cm}
+\begin{center}
+  \begin{tikzpicture}[color=darkgray,every node/.style={inner sep=0pt}]   
+\node[text width=10cm,align=center](Text){%
+To my parents
+} ;
+\node[shift={(-1cm,1cm)},anchor=north west](CNW)  at (Text.north west)
+               {\pgfornament[width=2cm]{61}};
+\node[shift={(1cm,1cm)},anchor=north east](CNE)   at (Text.north east)
+               {\pgfornament[width=2cm,symmetry=v]{61}}; 
+\node[shift={(-1cm,-1cm)},anchor=south west](CSW) at (Text.south west)
+               {\pgfornament[width=2cm,symmetry=h]{61}}; 
+\node[shift={(1cm,-1cm)},anchor=south east](CSE)  at (Text.south east)   
+               {\pgfornament[width=2cm,symmetry=c]{61}};  
+\pgfornamenthline{CNW}{CNE}{north}{87}
+\pgfornamenthline{CSW}{CSE}{south}{87}
+\pgfornamentvline{CNW}{CSW}{west}{87}
+\pgfornamentvline{CNE}{CSE}{east}{87} 
+\end{tikzpicture}
+
+\end{center}
+%\end{SingleSpace}
+\clearpage

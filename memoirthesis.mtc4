@@ -1,0 +1,8 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Container composition}{\reset@font\mtcSfont 27}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Resource allocation to the main container}{\reset@font\mtcSfont 27}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Resource allocation to secondary containers}{\reset@font\mtcSfont 29}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Memory allocation}{\reset@font\mtcSSfont 29}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Processor allocation}{\reset@font\mtcSSfont 30}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode domU shutdown and migration operations.}{\reset@font\mtcPfont 30}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \acrshort {io} management operations.}{\reset@font\mtcPfont 31}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Our approach advantages}{\reset@font\mtcSfont 31}}
