@@ -54,4 +54,3 @@ For any strange errors, latex StackExchange forum is your best bet...
 ## Acknowledgments
 [ShareLateX](https://www.sharelatex.com)
 
-* PMDK Source code : https://github.com/pmem/pmdk
