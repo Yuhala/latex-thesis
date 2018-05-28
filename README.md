@@ -50,11 +50,13 @@ The corresponding design for the above code is as follows...
 `Page 17` of the ornaments package documentation presents a list of designs and their corresponding values. See the [ornaments package documentation](ornaments.pdf) for more information.
 
 ## Default Colour
-The default colour used here is green. To change the default colour open the .. file and modify the colour name in the below command.
+The default colour used here is green. To change the default colour open the `memoirthesis.tex`  file and modify the colour values in the below command. 
 
 ```
-\renewcommand*{\psvectorianDefaultColor}{Green}%
+\definecolor{darkgray}{RGB}{0,80,0}
 ```
+For example the colour code `{RGB}{0,0,120}` gives the following view.
+![frontpage](colour.png)
 
 ## Glossaries
 Glossary items are added in the `memoirthesis.tex` file using the below syntax
