@@ -44,7 +44,15 @@ To modify the frontpage border design, open the `frontmatter/title.tex` file and
 ```
 The corresponding design for the above code is as follows...
 ![frontpage](frontpage.png)
+
 `Page 17` of the ornaments package documentation presents a list of designs and their corresponding values. See the [ornaments package documentation](ornaments.pdf) for more information.
+
+## Default Colour
+The default colour used here is green. To change the default colour open the .. file and modify the colour name in the below command.
+
+```
+\renewcommand*{\psvectorianDefaultColor}{Green}%
+```
 
 ## Glossaries
 Glossary items are added in the `memoirthesis.tex` file using the below syntax
