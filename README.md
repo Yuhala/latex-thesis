@@ -56,7 +56,7 @@ The default colour used here is green. To change the default colour open the `me
 \definecolor{darkgray}{RGB}{0,80,0}
 ```
 For example the colour code `{RGB}{0,0,120}` gives the following view.
-![frontpage](colour.png)
+![frontpage](colour1.png)
 
 ## Glossaries
 Glossary items are added in the `memoirthesis.tex` file using the below syntax
