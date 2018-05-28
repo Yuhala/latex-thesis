@@ -2,7 +2,7 @@
 This repository contains a thesis latex project template based on the [University of Bristol]( https://github.com/pmem/pmdk) latex template. The project is best suited for ENSP students but anyone can customize it to suit his/her needs.
 
 ### Prerequisites
-In order to follow the tutorial smoothly, start by installing latex on your machine and any latex editor that suits you; I use [TeXstudio](https://www.texstudio.org) latex editor. Installing and configuring these is beyond the scope of this tutorial. To use this template with minimal hiccups, you should have a fairly good level of latex knowledge.
+In order to follow the tutorial smoothly, start by installing latex on your machine and any latex editor that suits you; I use [TeXstudio](https://www.texstudio.org) latex editor. Installing and configuring these is beyond the scope of this tutorial. You can also import this project in [ShareLateX](https://www.sharelatex.com). To use this template with minimal hiccups, you should have a fairly good level of latex knowledge.
 
 
 ## Downloading the project to your machine 
@@ -12,6 +12,8 @@ To get this starter template on your local machine, you can either download the 
 git clone https://github.com/Yuhala/latex-thesis.git
 
 ```
+If you prefer using [ShareLateX](https://www.sharelatex.com) for your latex projects, simply create a new latex project on [ShareLateX](https://www.sharelatex.com) and import this zip file to your workspace.
+
 #### Quick intro
 As a quick intro, the project contains 3 main folder: `chapters`, `frontmatter`, and `logos`. The names are pretty self explanatory. Each chapter folder has a figure folder, where all images for the chapter should be put. The `ornaments.pdf` file contains the full documentation for the `latex ornament package` which is used for all the beautiful designs. 
 
@@ -48,11 +50,13 @@ The corresponding design for the above code is as follows...
 `Page 17` of the ornaments package documentation presents a list of designs and their corresponding values. See the [ornaments package documentation](ornaments.pdf) for more information.
 
 ## Default Colour
-The default colour used here is green. To change the default colour open the .. file and modify the colour name in the below command.
+The default colour used here is green. To change the default colour open the `memoirthesis.tex`  file and modify the colour values in the below command. 
 
 ```
-\renewcommand*{\psvectorianDefaultColor}{Green}%
+\definecolor{darkgray}{RGB}{0,80,0}
 ```
+For example the colour code `{RGB}{0,0,120}` gives the following view.
+![frontpage](colour.png)
 
 ## Glossaries
 Glossary items are added in the `memoirthesis.tex` file using the below syntax
@@ -74,7 +78,7 @@ Each chapter starts with a small mini table of contents. Modify the correspondin
 `figxx` directory for the sake of neatness
 
 #### Troubleshooting
-For any strange errors, latex StackExchange forum is your best bet...
+For any strange errors, [TeX-LaTeXStackExchange](https://tex.stackexchange.com/) forum is your best bet...
 
 ## Author
 
