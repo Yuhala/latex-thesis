@@ -13,24 +13,39 @@ git clone https://github.com/Yuhala/latex-thesis.git
 
 ```
 #### Quick intro
-As a quick intro, the project contains 3 main folder: `chapters`, `frontmatter`, and `logos`. The names are pretty self explanatory. Each chapter folder has a figure folder, where all images for the chapter should be put. The `ornaments.pdf` file contains the full documentation for the `latex ornament package` which is used for all the beautiful designs
+As a quick intro, the project contains 3 main folder: `chapters`, `frontmatter`, and `logos`. The names are pretty self explanatory. Each chapter folder has a figure folder, where all images for the chapter should be put. The `ornaments.pdf` file contains the full documentation for the `latex ornament package` which is used for all the beautiful designs. 
 
 #### Quick test
 In order to do a quick test of the project, open the folder in your latex editor and compile the project. You would probably see some errors but as long as your `memoirthesis.pdf` has reasonable enough content, I think you are good to go.
 
 #### Doing Modifications
-Here we would get a little bit into the internals of the project and learn how we can build our project using this as a base
+Here we would get a little bit into the internals of the project and learn how we can build our project using this as a base. Keep in mind that the main latex project file is the  `memoirthesis.tex` file. This file indexes all the rest and should be the first file opened in your latex editor.
 
 ## Frontmatter
 The frontmatter consists of the front page, title, gloassaries, abstracts and dedications.
 
 ## Frontpage border design
 To modify the frontpage border design, open the `frontmatter/title.tex` file and modify the tikzpicture values. 
+```
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm,color=darkgray]
+\node (nworn) [shift={(5mm,-5mm)}, anchor=north west, on chain ] at (current page.north west) {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,17}
+\node [on chain] {\pgfornament[width=10mm]{19}};
+\node (neorn) [on chain] {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,25}
+\node [continue chain=going below, on chain] {\pgfornament[width=10mm]{24}};
+\node (seorn) [on chain] {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,17}
+\node [continue chain=going left, on chain] {\pgfornament[width=10mm]{24}};
+\node (sworn) [on chain] {\pgfornament[width=10mm]{24}};
+\foreach \i in {1,...,25}
+\node [continue chain=going above, on chain] {\pgfornament[width=10mm]{24}};
+\end{tikzpicture}
+```
+The corresponding design for the above code is as follows...
+![frontpage](frontpage.png)
+`Page 17` of the ornaments package documentation presents a list of designs and their corresponding values. See the [ornaments package documentation](ornaments.pdf) for more information.
 
-```
-tikzborder design
-```
-See the ornaments package documentation for more information.
 ## Glossaries
 Glossary items are added in the `memoirthesis.tex` file using the below syntax
 ```
