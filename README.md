@@ -22,8 +22,15 @@ In order to do a quick test of the project, open the folder in your latex editor
 Here we would get a little bit into the internals of the project and learn how we can build our project using this as a base
 
 ## Frontmatter
-The frontmatter consists of the front page, title, gloassaries, abstracts and dedications. For the frontpage corner design, open the `frontmatter/title.tex` file and modify the tikzpicture values. See the ornaments package documentation for more information.
+The frontmatter consists of the front page, title, gloassaries, abstracts and dedications.
 
+## Frontpage border design
+To modify the frontpage border design, open the `frontmatter/title.tex` file and modify the tikzpicture values. 
+
+```
+tikzborder design
+```
+See the ornaments package documentation for more information.
 ## Glossaries
 Glossary items are added in the `memoirthesis.tex` file using the below syntax
 ```
