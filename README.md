@@ -74,7 +74,7 @@ Each chapter starts with a small mini table of contents. Modify the correspondin
 `figxx` directory for the sake of neatness
 
 #### Troubleshooting
-For any strange errors, [TeX-LaTeXStackExchange]https://tex.stackexchange.com/) forum is your best bet...
+For any strange errors, [TeX-LaTeXStackExchange](https://tex.stackexchange.com/) forum is your best bet...
 
 ## Author
 
