@@ -48,7 +48,7 @@ To modify the frontpage border design, open the `frontmatter/title.tex` file and
 The corresponding design for the above code is as follows...
 ![frontpage](frontpage.png)
 
-`Page 17` of the ornaments package documentation presents a list of designs and their corresponding values. See the [ornaments package documentation](ornaments.pdf) for more information.
+The left and right border designs correspond to design `24` and the top border corresponds to design `19`. `Page 17` of the ornaments package documentation presents a list of designs and their corresponding values. See the [ornaments package documentation](ornaments.pdf) for more information.
 
 ## Default Colour
 The default colour used here is green. To change the default colour open the `memoirthesis.tex`  file and modify the colour values in the below command. 
