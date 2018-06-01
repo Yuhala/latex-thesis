@@ -1,5 +1,5 @@
 # Latex Thesis Template for ENSP
-This repository contains a thesis latex project template based on the [University of Bristol]( https://github.com/pmem/pmdk) thesis latex template. The project is best suited for ENSP students but anyone can customize it to suit his/her needs.
+This repository contains a thesis latex project template based on the [University of Bristol](https://www.sharelatex.com/templates/thesis/university-of-bristol-thesis-template) thesis latex template. The project is best suited for ENSP students but anyone can customize it to suit his/her needs.
 
 ### Prerequisites
 In order to follow the tutorial smoothly, start by installing latex on your machine and any latex editor that suits you; I use [TeXstudio](https://www.texstudio.org) latex editor. Installing and configuring these is beyond the scope of this tutorial. You can also download the zip and then upload the project to [ShareLateX](https://www.sharelatex.com) (Recommended Approach). To use this template with minimal hiccups, you should have a fairly good level of latex knowledge.
